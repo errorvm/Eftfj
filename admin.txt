@@ -1,0 +1,30 @@
+┌──────────────────┐
+│ Admin Opens      │
+│ admin.php        │
+└────────┬────────┘
+         ↓
+┌──────────────────────────────┐
+│ Admin Can:                   │
+│ - Enter Custom Key (Optional)│
+│ - Set Expiration Days        │
+│ - Generate Random Key        │
+│ - View All Keys              │
+└────────┬─────────────────────┘
+         ↓
+┌──────────────────────────────┐
+│ Key Saved in Database        │
+│ - If Custom Key Entered, Use │
+│ - Otherwise, Generate Random │
+│ - Expiry Time Set by Admin   │
+└────────┬─────────────────────┘
+         ↓
+┌──────────────────────────────┐
+│ Admin Views All Keys         │
+│ - Key, Device ID, Expiry Time│
+│ - Edit Expiry Time           │
+│ - Delete Key                 │
+└────────┬─────────────────────┘
+         ↓
+┌──────────────────┐
+│ Logout Admin     │
+└──────────────────┘

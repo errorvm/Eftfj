@@ -1,0 +1,47 @@
+┌──────────────┐
+│ User Opens   │
+│ index.php    │
+└──────┬───────┘
+       ↓
+┌──────────────────┐
+│ Redirect to      │
+│ login.php        │
+└────────┬────────┘
+         ↓
+┌──────────────────────────┐
+│ User Enters Login Key    │
+│ [login.php]              │
+└──────────────┬───────────┘
+               ↓
+    ┌────────────────────────────┐
+    │ Check Key in Database      │
+    ├────────────────────────────┤
+    │ 1. If Key Doesn't Exist    │───▶ Show Error  
+    │ 2. If Key is Expired       │───▶ Show Expired Message
+    │ 3. If Key Exists & Valid   │    │
+    └────────────────────────────┘    ▼
+        ┌───────────────────────────────────┐
+        │ Check Device ID in Database       │
+        ├───────────────────────────────────┤
+        │ If No Device ID → Assign Device ID│
+        │ If Device Matches → Allow Login   │───▶ Redirect to Dashboard
+        │ If Different Device → Block Login │
+        └───────────────────────────────────┘
+
+┌────────────────────────┐
+│ User Enters Dashboard  │
+│ [dashboard.php]        │
+└────────┬───────────────┘
+         ↓
+┌────────────────────────┐
+│ Show User Details      │
+│ - Key                 │
+│ - Device ID           │
+│ - Expiration Time     │
+└────────┬──────────────┘
+         ↓
+┌────────────────────────┐
+│ Logout (logout.php)    │
+│ - Destroy Session      │
+│ - Redirect to Login    │
+└────────────────────────┘
